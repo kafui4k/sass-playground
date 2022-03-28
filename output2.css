@@ -1,0 +1,11 @@
+body {
+  font: 100% Helvetica, sans-serif;
+  color: lightgray;
+}
+
+.inverse {
+  background-color: lightgray;
+  color: white;
+}
+
+/*# sourceMappingURL=output2.css.map */
