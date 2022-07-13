@@ -1,0 +1,24 @@
+{
+    "name": "sass-playground",
+    "version": "1.0.0",
+    "description": "repository to learn sass and play with the sass technology",
+    "main": "index.js",
+    "scripts": {
+        "compile-sass": "sass app.scss app.css --watch --no-source-map"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/kafui4k/sass-playground.git"
+    },
+    "keywords": [
+        "sass",
+        "scss",
+        "styling"
+    ],
+    "author": "Kafui Alordo",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/kafui4k/sass-playground/issues"
+    },
+    "homepage": "https://github.com/kafui4k/sass-playground#readme"
+}
