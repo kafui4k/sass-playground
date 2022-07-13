@@ -1,14 +1,82 @@
 @use 'navbar';
 @use 'header';
+@use 'sass:math';
 /*
     sass modules
     use the @use rule with the module name in ''
 */
 
+@mixin alert($bg, $radius) {
+    background-color: $bg;
+    border-radius: $radius;
+    color: white;
+    padding: 15px;
+    font-size: 14px;
+}
+
 // sass variabe
 $box-color: orange;
 $number: 5;
 $sum: 10 + 30;
+
+$colors: ('orange', 'green', 'red', 'blue');
+$fontWeights: (
+    'normal': 400,
+    'bold': 500,
+    'extrBold': 600,
+);
+
+$startLoop: 1;
+$endLoop: 20;
+
+@for $i from $startLoop through $endLoop {
+    .fontSize-#{$i} {
+        font-size: #{$i}px;
+    }
+}
+
+@each $key, $value in $fontWeights {
+    .font-#{$key} {
+        font-weight: $value;
+    }
+}
+
+@each $color in $colors {
+    .color-#{$color} {
+        background: #{$color};
+    }
+}
+
+$circle: 'normal';
+
+.header {
+    width: 200px;
+    height: 200px;
+
+    @if $circle == 'normal' {
+        border-radius: 10px;
+    } @else if $circle == 'radius' {
+        border-radius: 50%;
+    } @else {
+        border-radius: 0;
+    }
+}
+
+@function grid($number) {
+    @return math.div(100%, 12) * $number;
+}
+
+.col-1 {
+    width: grid(1);
+}
+
+.col-2 {
+    width: grid(2);
+}
+
+.col-3 {
+    width: grid(3);
+}
 
 // @debug $number;
 // @debug 'the sum is #{$sum}';
@@ -24,6 +92,27 @@ $sum: 10 + 30;
 // .box3 {
 //     background: $box-color;
 // }
+%alert {
+    padding: 15px;
+    font-size: 14px;
+    color: white;
+}
+
+%alert-radius {
+    border-radius: 5px;
+}
+
+.alert-danger {
+    @include alert(red, 4px) // @extend %alert, %alert-radius;
+        // background: red;
+;
+}
+
+.alert-success {
+    // @extend %alert, %alert-radius;
+    // background: green;
+    @include alert(green, 8px);
+}
 
 .nav {
     width: 100%;
