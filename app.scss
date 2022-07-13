@@ -25,21 +25,30 @@ $sum: 10 + 30;
 //     background: $box-color;
 // }
 
-nav {
+.nav {
     width: 100%;
     height: 80px;
     background: orange;
     line-height: 80px;
 
-    ul {
+    &__ul {
+        // instead of the .nav__ul we can use the & symbol
         list-style: none;
 
-        li {
+        &__li {
             display: inline-block;
 
-            a {
+            &__a {
                 text-decoration: none;
                 color: white;
+
+                &--red {
+                    color: red;
+                }
+
+                &--indigo {
+                    color: indigo;
+                }
             }
         }
     }
