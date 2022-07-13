@@ -1,5 +1,10 @@
 // sass variabe
 $box-color: orange;
+$number: 5;
+$sum: 10 + 30;
+
+@debug $number;
+@debug 'the sum is #{$sum}';
 
 .box1 {
     background: $box-color;
