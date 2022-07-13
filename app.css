@@ -1,3 +1,17 @@
+nav {
+  background: orange;
+  color: white;
+}
+
+header {
+  background: indigo;
+  color: white;
+}
+
+/*
+    sass modules
+    use the @use rule with the module name in ''
+*/
 .box1 {
   background: orange;
 }
